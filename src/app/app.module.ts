@@ -6,10 +6,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 
 const routes = [
     { path: 'home', component: HomeComponent },
+    { path: 'new-post', component: NewPostComponent },
 
     { path: '', redirectTo: '/home', pathMatch: "full" }
 ]
@@ -17,11 +19,13 @@ const routes = [
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        NewPostComponent
     ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
