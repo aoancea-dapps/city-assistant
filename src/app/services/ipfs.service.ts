@@ -1,0 +1,18 @@
+import { Injectable } from '@angular/core';
+
+declare var IPFS: any;
+
+//const IPFS = require('ipfs-mini');
+
+
+@Injectable()
+export class IpfsService {
+
+    public ipfs: any;
+
+    constructor() {
+        this.ipfs = new IPFS({ host: 'localhost', port: 5001, protocol: 'http' });
+
+        //this.ipfs = IPFS({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
+    }
+}

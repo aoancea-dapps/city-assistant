@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NewPostComponent } from './new-post/new-post.component';
 
+import { Web3ProviderService } from './services/web3-provider.service';
+import { IpfsService } from './services/ipfs.service';
 
 const routes = [
     { path: 'home', component: HomeComponent },
@@ -27,7 +29,8 @@ const routes = [
         RouterModule.forRoot(routes),
         FormsModule
     ],
-    providers: [],
+    providers: [Web3ProviderService, IpfsService],
     bootstrap: [AppComponent]
 })
+
 export class AppModule { }
