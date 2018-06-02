@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 declare var Web3: any;
 declare var window: any;
-//declare var web3: any;
 
 @Injectable()
 export class Web3ProviderService {
@@ -11,8 +10,6 @@ export class Web3ProviderService {
     public isMetaMask: boolean;
 
     constructor() {
-        //this.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-
         try {
             if (Web3 !== 'undefined') {
                 // Use Mist/MetaMask's provider
