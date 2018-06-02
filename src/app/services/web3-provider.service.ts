@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 declare var Web3: any;
+declare var window: any;
 //declare var web3: any;
 
 @Injectable()
@@ -15,7 +16,7 @@ export class Web3ProviderService {
         try {
             if (Web3 !== 'undefined') {
                 // Use Mist/MetaMask's provider
-                this.web3 = new Web3(Web3.currentProvider);
+                this.web3 = new Web3(window.web3.currentProvider);
                 this.isMetaMask = true;
             } else {
                 // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
