@@ -24,6 +24,8 @@ export class Web3ProviderService {
             // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
             this.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
             this.isMetaMask = false;
+        } finally {
+            this.web3.eth.defaultAccount = this.web3.eth.accounts[0];
         }
     }
 }
