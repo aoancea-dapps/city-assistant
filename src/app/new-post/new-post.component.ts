@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 import { Web3ProviderService } from '../services/web3-provider.service';
 import { IpfsService } from '../services/ipfs.service';
 
@@ -17,7 +19,8 @@ export class NewPostComponent implements OnInit {
 
     constructor(
         private web3Provider: Web3ProviderService,
-        private ipfsService: IpfsService) {
+        private ipfsService: IpfsService,
+        private router: Router) {
     }
 
     ngOnInit() {
@@ -50,6 +53,8 @@ export class NewPostComponent implements OnInit {
                     console.log(err);
                 } else {
                     console.log('hash saved in blockchain!');
+
+                    self.router.navigate(['/home']);
                 }
             });
         });
