@@ -13,7 +13,7 @@ export class HashStoreContract {
 
         var HashStoreContract = this.web3Provider.web3.eth.contract(HashStoreABI);
 
-        this.instance = HashStoreContract.at('0x0510ad11b347b84c0c7cd83b18af0a3147e76883');
-        //this.instance = HashStoreContract.at('0x18150663f29925e2ba7c8fbab55ebfc4c5e1606f');
+        //this.instance = HashStoreContract.at('0x0510ad11b347b84c0c7cd83b18af0a3147e76883');
+        this.instance = HashStoreContract.at('0x18150663f29925e2ba7c8fbab55ebfc4c5e1606f');
     }
 }

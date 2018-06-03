@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 
 import { Router } from '@angular/router';
 
@@ -20,7 +20,8 @@ export class NewPostComponent implements OnInit {
     constructor(
         private hashStoreContract: HashStoreContract,
         private ipfsService: IpfsService,
-        private router: Router) {
+        private router: Router,
+        private ngZone: NgZone) {
     }
 
     ngOnInit() {
@@ -46,7 +47,9 @@ export class NewPostComponent implements OnInit {
                 } else {
                     console.log('hash saved in blockchain!');
 
-                    self.router.navigate(['/home']);
+                    self.ngZone.run(() => {
+                        self.router.navigate(['/home']);
+                    });
                 }
             });
         });
