@@ -42,7 +42,8 @@ export class HomeComponent implements OnInit {
                     self.ipfsService.ipfs.catJSON(hashStore[1], function (err, ipfsPost) {
 
                         var post: Post = {
-                            id: hashStore[1],
+                            id: hashId,
+                            hash: hashStore[1],
                             title: ipfsPost.title,
                             content: ipfsPost.content
                         };
