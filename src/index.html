@@ -5,7 +5,9 @@
     <meta charset="utf-8">
 
     <title>CityAssistant</title>
-    <base href="/">
+    <script>
+        document.write('<base href="' + String(document.origin) + '">')
+    </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
