@@ -11,6 +11,8 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { Web3ProviderService } from './services/web3-provider.service';
 import { IpfsService } from './services/ipfs.service';
 
+import { HashStoreContract } from './contracts/hash-store.contract';
+
 const routes = [
     { path: 'home', component: HomeComponent },
     { path: 'new-post', component: NewPostComponent },
@@ -29,7 +31,10 @@ const routes = [
         RouterModule.forRoot(routes),
         FormsModule
     ],
-    providers: [Web3ProviderService, IpfsService],
+    providers: [
+        Web3ProviderService, IpfsService,
+        HashStoreContract,
+    ],
     bootstrap: [AppComponent]
 })
 

@@ -1,10 +1,12 @@
 import { Component, OnInit, Self } from '@angular/core';
 
-import { Web3ProviderService } from '../services/web3-provider.service';
 import { IpfsService } from '../services/ipfs.service';
 
 import { Post } from './post.model';
 import { promise } from 'protractor';
+
+
+import { HashStoreContract } from '../contracts/hash-store.contract';
 
 @Component({
     selector: 'app-home',
@@ -15,25 +17,11 @@ export class HomeComponent implements OnInit {
 
     posts: Post[] = [];
 
-    private hashStoreInstance: any;
-
     constructor(
-        private web3Provider: Web3ProviderService,
+        private hashStoreContract: HashStoreContract,
         private ipfsService: IpfsService) { }
 
     async ngOnInit() {
-        var self = this;
-
-        self.web3Provider.web3.eth.defaultAccount = self.web3Provider.web3.eth.accounts[0];
-
-        var HashStoreABI = [{ "constant": false, "inputs": [{ "name": "content", "type": "string" }], "name": "save", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "constant": true, "inputs": [{ "name": "_hashId", "type": "uint256" }], "name": "find", "outputs": [{ "name": "hashSender", "type": "address" }, { "name": "hashContent", "type": "string" }, { "name": "hashTimestamp", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "uint256" }], "name": "hashes", "outputs": [{ "name": "sender", "type": "address" }, { "name": "content", "type": "string" }, { "name": "timestamp", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "lastHashId", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }];
-
-        var HashStoreContract = self.web3Provider.web3.eth.contract(HashStoreABI);
-
-        self.hashStoreInstance = HashStoreContract.at('0x0510ad11b347b84c0c7cd83b18af0a3147e76883');
-        //self.hashStoreInstance = HashStoreContract.at('0x18150663f29925e2ba7c8fbab55ebfc4c5e1606f');
-
-
         var hashId: number = await this.load_hash_id();
 
         var posts: Post[] = await this.load_posts(hashId);
@@ -87,7 +75,7 @@ export class HomeComponent implements OnInit {
 
         const promise = new Promise<number>((resolve, reject) => {
 
-            self.hashStoreInstance.lastHashId(function (err, result) {
+            self.hashStoreContract.instance.lastHashId(function (err, result) {
 
                 var lastHashId: number = result['c'][0];
 
@@ -103,7 +91,7 @@ export class HomeComponent implements OnInit {
 
         const promise = new Promise<string>((resolve, reject) => {
 
-            self.hashStoreInstance.find(hashId, function (err, hashStore) {
+            self.hashStoreContract.instance.find(hashId, function (err, hashStore) {
 
                 var hash: string = hashStore[1];
 
