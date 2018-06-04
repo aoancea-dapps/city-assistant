@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Web3ProviderService } from '../services/web3-provider.service';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class HashStoreContract {
 
@@ -13,7 +15,10 @@ export class HashStoreContract {
 
         var HashStoreContract = this.web3Provider.web3.eth.contract(HashStoreABI);
 
-        //this.instance = HashStoreContract.at('0x0510ad11b347b84c0c7cd83b18af0a3147e76883');
-        this.instance = HashStoreContract.at('0x18150663f29925e2ba7c8fbab55ebfc4c5e1606f');
+        if (this.web3Provider.isMetaMask) {
+            this.instance = HashStoreContract.at(environment.hash_store_contract_address_ropsten);
+        } else {
+            this.instance = HashStoreContract.at(environment.hash_store_contract_address_local);
+        }
     }
 }
