@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { ProfileComponent } from './profile/profile.component';
 
 import { Web3ProviderService } from './services/web3-provider.service';
 import { IpfsService } from './services/ipfs.service';
@@ -16,6 +17,7 @@ import { HashStoreContract } from './contracts/hash-store.contract';
 const routes = [
     { path: 'home', component: HomeComponent },
     { path: 'new-post', component: NewPostComponent },
+    { path: 'profile', component: ProfileComponent },
 
     { path: '', redirectTo: '/home', pathMatch: "full" }
 ]
@@ -24,7 +26,8 @@ const routes = [
     declarations: [
         AppComponent,
         HomeComponent,
-        NewPostComponent
+        NewPostComponent,
+        ProfileComponent
     ],
     imports: [
         BrowserModule,

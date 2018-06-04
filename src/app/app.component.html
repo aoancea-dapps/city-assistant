@@ -34,7 +34,7 @@
                     <a href="#" class="nav-link">
                         <i class="fa fa-bell-o"></i>
                     </a>
-                    <a href="#" class="nav-link">Bruce Wayne
+                    <a [routerLink]="['/profile']" class="nav-link">Bruce Wayne
                         <img class="img-fluid rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/admin-bg.jpg">
                     </a>
                 </nav>
@@ -133,6 +133,6 @@
         <a class="p-2 text-dark" [routerLink]="['/new-post']">New post</a>
     </nav>
 </div> -->
-<main role="main" class="container">
+<div class="container">
     <router-outlet></router-outlet>
-</main>
+</div>
