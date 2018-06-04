@@ -6,7 +6,7 @@ export const environment = {
     production: false,
 
     hash_store_contract_address_local: '0x3ea576e754125b3c2a1f65cede691e8519850dc3',
-    hash_store_contract_address_ropsten: '0x18150663f29925e2ba7c8fbab55ebfc4c5e1606f',
+    hash_store_contract_address_ropsten: '0x32d07cbd2ecbeddfc7908f6fdcae99a2fddbe18b',
 };
 
 /*
