@@ -1,4 +1,4 @@
-.post {
+/* .post {
     height: 500px;
     background-color: #212226;
     color: #fff;
@@ -73,4 +73,131 @@
     float: left;
     padding-left: 1rem;
     color: #808080;
-}
+} */
+
+
+
+
+.post {
+
+    background-color: #fff;
+    color: #000;
+
+    margin-top: 20px;
+  }
+  .post .caption {
+    position: relative;
+    height: inherit;
+    background-color: inherit;
+    padding: 10px;
+  }
+  .post .content {
+    position: relative;
+    height: inherit;
+    padding: 10px;
+  }
+  .post .content .img {
+    width: 100%;
+    height: auto;
+  }
+  .post .author {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  .post .author .avatar {
+    position: relative;
+    float: left;
+    width: 3rem;
+    border-radius: 50%;
+  }
+  .post .author .name {
+    position: relative;
+    float: left;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 1rem;
+  }
+  .post .meta {
+    float: left;
+    padding-left: 1rem;
+    size: .6rem;
+    color: #000;
+  }
+  .post .caption .text {
+    margin: .5rem 0;
+  }
+  .post .category {
+    visibility: hidden;
+  }
+
+
+/*=== Large devices (desktops, 992px and up) ===*/
+@media (min-width: 992px) {
+    .post {
+      height: 500px; 
+    }
+    .post .caption {
+      float: left;
+      padding: 2rem;
+    }
+    .post .author {
+      margin-bottom: 5rem;
+    }
+    
+    .post .caption .text {
+      margin: 1rem 0;
+    }
+    .post .content {
+      float: left;
+      padding: 0;
+    }
+    .post .content .img {
+      height: 100%;
+    }
+    .post .category {
+      visibility: visible;
+    }
+    }
+
+
+/* =======================================
+ post#3
+========================================*/
+
+/*=== Large devices (desktops, 992px and up) ===*/
+@media (min-width: 992px) {
+   
+    #post3 .content {
+      width: 30%;
+    }
+    #post3 .author {
+      padding: 2rem;
+      z-index: 5;
+    }
+    #post3 .author .meta {
+      float: left;
+      padding-left: 1rem;
+    }
+    #post3 .content .img {
+      position: absolute;
+      top: 0;
+    }
+    #post3 .caption {
+      width: 70%;
+      background-color:#212226;
+      color: #fff;
+    }
+    #post3 .caption .text {
+      position: absolute;
+      top: 50%;
+      padding: 2rem;
+      transform: translate(0, -50%);
+      color: #ddd;
+    }
+    #post3 .caption .category {
+      margin-top: 1rem; 
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 400; 
+    }
+    }
