@@ -1,0 +1,74 @@
+.post {
+    height: 500px;
+    background-color: #212226;
+    color: #fff;
+}
+
+.post .caption {
+    height: inherit;
+    background-color: inherit;
+    float: left;
+    padding: 2rem;
+    width: 30%;
+}
+
+.post .content {
+    height: inherit;
+    padding: 10px;
+
+    float: left;
+    padding: 0;
+
+    width: 70%;
+}
+
+.post .content .img {
+    height: 100%;
+}
+
+.post .author {
+    margin-bottom: 5rem;
+}
+
+
+.post .author .avatar {
+
+    float: left;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.post .author .name {
+
+    float: left;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+.post .meta {
+    float: left;
+    padding-left: 1rem;
+    size: .6rem;
+    color: #000;
+}
+
+.post .caption .text {
+    margin: 1rem 0;
+}
+
+.post .category {
+    visibility: visible;
+
+    top: 10%;
+    right: 0;
+    padding: .5rem;
+    background-color: #808080;
+    z-index: 5;
+}
+
+.post .caption .meta {
+    float: left;
+    padding-left: 1rem;
+    color: #808080;
+}
