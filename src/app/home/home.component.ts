@@ -2,7 +2,7 @@ import { Component, OnInit, Self } from '@angular/core';
 
 import { IpfsService } from '../services/ipfs.service';
 
-import { Post } from './post.model';
+import { Post, HashStore } from './post.model';
 import { promise } from 'protractor';
 
 
@@ -56,9 +56,9 @@ export class HomeComponent implements OnInit {
 
             for (let hashId = 1; hashId <= lastHashId; hashId++) {
 
-                var hash: string = await self.find_hash(hashId);
+                var hash_store: HashStore = await self.find_hash(hashId);
 
-                var post: Post = await self.load_post_ipfs(hash);
+                var post: Post = await self.load_post_ipfs(hash_store.hash);
                 post.id = hashId;
 
                 posts.push(post);
@@ -86,14 +86,16 @@ export class HomeComponent implements OnInit {
         return promise;
     }
 
-    async find_hash(hashId: number): Promise<string> {
+    async find_hash(hashId: number): Promise<HashStore> {
         var self = this;
 
-        const promise = new Promise<string>((resolve, reject) => {
+        const promise = new Promise<HashStore>((resolve, reject) => {
 
             self.hashStoreContract.instance.find(hashId, function (err, hashStore) {
 
-                var hash: string = hashStore[1];
+                var hash : HashStore = new HashStore();
+                hash.owner = hashStore[0];
+                hash.hash = hashStore[1];
 
                 resolve(hash);
             });

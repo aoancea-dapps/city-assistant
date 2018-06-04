@@ -4,3 +4,8 @@ export class Post {
     title: string;
     content: string;
 }
+
+export class HashStore {
+    owner: string;
+    hash: string;
+}
