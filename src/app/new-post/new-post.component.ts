@@ -33,15 +33,15 @@ export class NewPostComponent implements OnInit {
 
         let data = { title: this.title, content: this.content };
 
-        this.ipfsService.ipfs.addJSON(data, (err, hash) => {
+        this.ipfsService.ipfs.addJSON(data, (err, post_has_id) => {
 
             if (err)
                 console.log(err);
 
             console.log("Saved to IPFS", data);
-            console.log("IPFS hash:", hash);
+            console.log("IPFS hash:", post_has_id);
 
-            self.hashStoreContract.instance.save(hash, { gas: 300000 }, function (err, bidResult) {
+            self.hashStoreContract.instance.save(post_has_id, { gas: 300000 }, function (err, res) {
                 if (err) {
                     console.log(err);
                 } else {
