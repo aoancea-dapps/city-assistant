@@ -18,6 +18,8 @@ export class ProfileComponent implements OnInit {
 
     public profile: Profile = new Profile();
 
+    public balance: string;
+
     constructor(
         private hashStoreContract: HashStoreContract,
         private ipfsService: IpfsService,
@@ -29,6 +31,13 @@ export class ProfileComponent implements OnInit {
     // This information should be cached in local storage so we don't fetch it everywhere
 
     async ngOnInit() {
+
+        var self = this;
+
+        self.hashStoreContract.instance.balanceOf(self.web3ProviderService.web3.eth.defaultAccount, function (err, balance) {
+            self.balance = balance['c'][0];
+        });
+
         var profile_hash_id: string = await this.get_profile_hash_id();
 
         if (profile_hash_id) {

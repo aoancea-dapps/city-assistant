@@ -1,8 +1,19 @@
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.16;
 
 contract HashStore {
 
+    // Public variables of the token
+    string public name;
+    string public symbol;
+    uint8 public decimals = 18;
+    // 18 decimals is the strongly suggested default, avoid changing it
+    uint256 public totalSupply;
+
+
     mapping(address => string) private profiles;
+
+    /* This creates an array with all balances */
+    mapping (address => uint256) public balanceOf;
 
 
     struct Hash {
@@ -15,8 +26,24 @@ contract HashStore {
 
     uint public lastHashId;
 
-    constructor() public {
+
+    /* Initializes contract with initial supply tokens to the creator of the contract */
+    constructor (uint256 initialSupply) public {
         lastHashId = 0;
+
+        // Token setup
+        totalSupply = initialSupply * 100;                      // Update total supply with the decimal amount
+        balanceOf[msg.sender] = initialSupply;                  // Give the creator all initial tokens
+        name = "City Assistant Token";                          // Set the name for display purposes
+        symbol = "CAT";                                         // Set the symbol for display purposes
+    }
+
+    /* Send coins */
+    function transfer(address _to, uint256 _value) public {
+        require(balanceOf[msg.sender] >= _value);           // Check if the sender has enough
+        require(balanceOf[_to] + _value >= balanceOf[_to]); // Check for overflows
+        balanceOf[msg.sender] -= _value;                    // Subtract from the sender
+        balanceOf[_to] += _value;                           // Add the same to the recipient
     }
 
     function save(string content) public {
@@ -45,6 +72,7 @@ contract HashStore {
 
     function profile_save(string profile_hash) public {
         profiles[msg.sender] = profile_hash;
+        balanceOf[msg.sender] += 10;                        // Potential security issue: Currently allowed by a user to add funds to his account
     }
 
     function profile_get(address owner) view public returns (string profile_hash) {
