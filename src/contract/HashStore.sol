@@ -72,7 +72,11 @@ contract HashStore {
     }
 
     function post_vote(uint hashId, int vote) public {
+        int current_points = votes[hashId] / 5;
+
         votes[hashId] += vote;
+
+        balanceOf[msg.sender] += uint256((votes[hashId] / 5) - current_points);
     }
 
 

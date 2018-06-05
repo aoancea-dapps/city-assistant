@@ -169,7 +169,7 @@ export class HomeComponent implements OnInit {
 
             self.hashStoreContract.instance.votes(post_id, function (err, votes) {
 
-                resolve(votes['c'][0]);
+                resolve(votes['c'][0] * votes['s']);
             });
         });
 

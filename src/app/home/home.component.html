@@ -45,9 +45,15 @@
                 <!-- <div class="category">post category</div> -->
                 <p>{{post.content}}</p>
             </div>
+
             <i class="fa fa-thumbs-up fa-green-hover" style="cursor: pointer;" (click)="post_vote_up(post)"></i>
             <span [ngClass]="{'fa-red' : post.votes < 0, 'fa-green' : post.votes > 0}"> {{post.votes}} </span>
             <i class="fa fa-thumbs-down fa-red-hover" style="cursor: pointer;" (click)="post_vote_down(post)"></i>
+
+            <span style="padding-left: 10px;">
+                {{(post.votes / 5) * 3.1415 | currency}}
+                <!-- <i class="fa fa-dollar"></i> -->
+            </span>
         </div>
     </div>
 
