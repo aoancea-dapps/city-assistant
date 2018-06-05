@@ -23,6 +23,7 @@ contract HashStore {
     }
 
     mapping(uint => Hash) public hashes;
+    mapping(uint => uint) public votes;
 
     uint public lastHashId;
 
@@ -46,6 +47,10 @@ contract HashStore {
         balanceOf[_to] += _value;                           // Add the same to the recipient
     }
 
+
+
+    
+    /* Posts */
     function save(string content) public {
         uint hashId = ++lastHashId;
         hashes[hashId].sender = msg.sender;
@@ -66,10 +71,14 @@ contract HashStore {
         hash.timestamp = block.timestamp;
     }
 
+    function post_vote(uint hashId) public {
+        votes[hashId]++;
+    }
 
 
 
 
+    /* Profile */
     function profile_save(string profile_hash) public {
         profiles[msg.sender] = profile_hash;
         balanceOf[msg.sender] += 10;                        // Potential security issue: Currently allowed by a user to add funds to his account
