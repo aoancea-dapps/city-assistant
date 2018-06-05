@@ -77,6 +77,12 @@ export class HomeComponent implements OnInit {
                 else
                     post.owner_image_url = 'https://randomuser.me/api/portraits/men/73.jpg';
 
+                var votes: number = await self.get_post_votes(hashId);
+                if (votes)
+                    post.votes = votes;
+                else
+                    post.votes = 0;
+
                 posts.push(post);
             }
 
@@ -153,5 +159,37 @@ export class HomeComponent implements OnInit {
         });
 
         return promise;
+    }
+
+
+    async get_post_votes(post_id: number): Promise<number> {
+        var self = this;
+
+        const promise = new Promise<number>((resolve, reject) => {
+
+            self.hashStoreContract.instance.votes(post_id, function (err, votes) {
+
+                resolve(votes['c'][0]);
+            });
+        });
+
+        return promise;
+    }
+
+
+    post_vote_up(post: Post): void {
+        post.votes = post.votes + 1;
+
+        this.hashStoreContract.instance.post_vote(post.id, 1, function (err, result) {
+            // fire and forget => this should work
+        });
+    }
+
+    post_vote_down(post: Post): void {
+        post.votes = post.votes - 1;
+
+        this.hashStoreContract.instance.post_vote(post.id, -1, function (err, result) {
+            // fire and forget => this should work
+        });
     }
 }

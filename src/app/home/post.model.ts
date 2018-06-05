@@ -4,6 +4,8 @@ export class Post {
     title: string;
     content: string;
 
+    votes: number;
+
     owner_name: string;
     owner_image_url: string;
 }

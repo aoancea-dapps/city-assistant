@@ -27,8 +27,6 @@
     </div> -->
 
 
-
-
     <div class="post" *ngFor="let post of posts">
         <div class="content">
             <div class="author">
@@ -47,6 +45,9 @@
                 <!-- <div class="category">post category</div> -->
                 <p>{{post.content}}</p>
             </div>
+            <i class="fa fa-thumbs-up fa-green-hover" style="cursor: pointer;" (click)="post_vote_up(post)"></i>
+            <span [ngClass]="{'fa-red' : post.votes < 0, 'fa-green' : post.votes > 0}"> {{post.votes}} </span>
+            <i class="fa fa-thumbs-down fa-red-hover" style="cursor: pointer;" (click)="post_vote_down(post)"></i>
         </div>
     </div>
 

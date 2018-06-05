@@ -160,3 +160,21 @@
       font-size: 1.2rem;
       font-weight: 400; 
     }
+
+
+
+    .fa-red {
+        color: red;
+    }
+
+    .fa-green {
+        color: green;
+    }
+
+    .fa-red-hover:hover {
+        color: red;
+    }
+
+    .fa-green-hover:hover {
+        color: green;
+    }
