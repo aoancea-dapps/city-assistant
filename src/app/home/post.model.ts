@@ -3,6 +3,9 @@ export class Post {
     hash: string;
     title: string;
     content: string;
+
+    owner_name: string;
+    owner_image_url: string;
 }
 
 export class HashStore {

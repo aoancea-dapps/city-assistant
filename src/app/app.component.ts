@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
 
     constructor(
         private hashStoreContract: HashStoreContract,
-        private ipfsService: IpfsService) {
+        private ipfsService: IpfsService,
+        private web3ProviderService: Web3ProviderService) {
     }
 
     async ngOnInit() {
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
 
         const promise = new Promise<string>((resolve, reject) => {
 
-            self.hashStoreContract.instance.profile_get(function (err, result) {
+            self.hashStoreContract.instance.profile_get(self.web3ProviderService.web3.eth.defaultAccount, function (err, result) {
 
                 var profile_hash_id: string = result;
 

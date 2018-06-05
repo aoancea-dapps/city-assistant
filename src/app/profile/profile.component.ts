@@ -22,7 +22,8 @@ export class ProfileComponent implements OnInit {
         private hashStoreContract: HashStoreContract,
         private ipfsService: IpfsService,
         private router: Router,
-        private ngZone: NgZone) {
+        private ngZone: NgZone,
+        private web3ProviderService: Web3ProviderService) {
     }
 
     // This information should be cached in local storage so we don't fetch it everywhere
@@ -72,7 +73,7 @@ export class ProfileComponent implements OnInit {
 
         const promise = new Promise<string>((resolve, reject) => {
 
-            self.hashStoreContract.instance.profile_get(function (err, result) {
+            self.hashStoreContract.instance.profile_get(self.web3ProviderService.web3.eth.defaultAccount, function (err, result) {
 
                 var profile_hash_id: string = result;
 

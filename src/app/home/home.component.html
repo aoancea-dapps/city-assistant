@@ -32,11 +32,12 @@
     <div class="post" *ngFor="let post of posts">
         <div class="content">
             <div class="author">
-                <img src="https://randomuser.me/api/portraits/men/73.jpg" alt="" class="avatar">
-                <div class="name">@johndoe</div>
+                <img src="{{post.owner_image_url}}" alt="" class="avatar">
+                <div class="name">@{{post.owner_name}}</div>
                 <br/>
                 <div class="meta">
-                    <i class="fas fa-map-marker-alt"></i> Syria</div>
+                    <!-- <i class="fas fa-map-marker-alt"></i> Syria -->
+                </div>
             </div>
             <img src="https://cdn.stocksnap.io/img-thumbs/960w/VZBJUVPO25.jpg" class="img" alt="">
         </div>

@@ -47,7 +47,7 @@ contract HashStore {
         profiles[msg.sender] = profile_hash;
     }
 
-    function profile_get() view public returns (string profile_hash) {
-        return (profiles[msg.sender]);
+    function profile_get(address owner) view public returns (string profile_hash) {
+        return (profiles[owner]);
     }
 }
