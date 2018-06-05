@@ -23,7 +23,7 @@ contract HashStore {
     }
 
     mapping(uint => Hash) public hashes;
-    mapping(uint => uint) public votes;
+    mapping(uint => int) public votes;
 
     uint public lastHashId;
 
@@ -71,8 +71,8 @@ contract HashStore {
         hash.timestamp = block.timestamp;
     }
 
-    function post_vote(uint hashId) public {
-        votes[hashId]++;
+    function post_vote(uint hashId, int vote) public {
+        votes[hashId] += vote;
     }
 
 
