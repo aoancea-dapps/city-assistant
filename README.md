@@ -23,6 +23,9 @@ https://medium.com/@didil/off-chain-data-storage-ethereum-ipfs-570e030432cf
 
 
 ## Project direction and views
+
+### Project Platform
+#### Stage 1
 Main idea of the project shifted a bit: We are completely focusing on the Project Platform for now:
 - people can propose and vote on specific projects for a city
 - this information is available online and local authorities can pick it up and use it to build these projects
@@ -35,7 +38,11 @@ Main idea of the project shifted a bit: We are completely focusing on the Projec
 5. We might introduce voting on comments, which will generate points
 6. We need a way of exchanging CAT for ETH or make everything on the platform consume CAT as this is local currency(this might not be possible now)
 
+#### Stage 2
+In stage 2 we are adding more feature to the platform
 
+1. Ability for anyone to sponsor a campaign of idea challanges for a specific Region/City
+2. The campaign sponsorship is targeted for local authorities or companies which want to change something in a Region/City and want to speed things up - This will also serve as advertising for whoever does it(Companies could completely benefit from these kinds of activies by involving the local communities into building something awesome) - it can even be tied together with local NGOs and want to start a local information process to the public
 
 ## Media
 All updates will most likely be communicated via twitter @alx_oancea
