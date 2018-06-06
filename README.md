@@ -34,3 +34,8 @@ Main idea of the project shifted a bit: We are completely focusing on the Projec
 4. We might restrict adding a new post for a user in a specific Region/City such that people won't end up having several posts in multiple Regions/Cities as you can't live in two places at once or if it's the case, you pick one or pay the price for switching them
 5. We might introduce voting on comments, which will generate points
 6. We need a way of exchanging CAT for ETH or make everything on the platform consume CAT as this is local currency(this might not be possible now)
+
+
+
+## Media
+All updates will most likely be communicated via twitter @alx_oancea
