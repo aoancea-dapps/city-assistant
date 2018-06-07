@@ -56,6 +56,8 @@ In stage 2 we are adding more feature to the platform
 - ganache-cli or ganache-desktop
 - angular-cli
 - uPort
+- MetaMask
+- Ropsten test net(sometimes it might be Rinkeby)
 
 
 ## Media
