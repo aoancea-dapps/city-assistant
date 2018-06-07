@@ -7,9 +7,11 @@ https://medium.com/@didil/off-chain-data-storage-ethereum-ipfs-570e030432cf
 ## Installation steps - fully decentralized
 1. Install https://metamask.io/
 2. Login to Ropsten Test Net
-3. Navigate to (take the latest version)
-3.1 https://gateway.ipfs.io/ipfs/QmZk21YxuEYVhK9JHJ65BmYUnsuN83F1nRAaXWx9L8ZTWJ
-3.2 https://gateway.ipfs.io/ipfs/QmejwKRxzGcVwByppT4aQnnL9cc62wcTgNiiQJzwdEW75S
+3. Navigate to the url below (take the latest version)
+
+#### Deployed versions
+1. https://gateway.ipfs.io/ipfs/QmZk21YxuEYVhK9JHJ65BmYUnsuN83F1nRAaXWx9L8ZTWJ 
+2. https://gateway.ipfs.io/ipfs/QmejwKRxzGcVwByppT4aQnnL9cc62wcTgNiiQJzwdEW75S (latest)
 
 ## Installation steps - manual(local pc)
 1. Install https://metamask.io/
