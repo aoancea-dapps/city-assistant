@@ -7,7 +7,9 @@ https://medium.com/@didil/off-chain-data-storage-ethereum-ipfs-570e030432cf
 ## Installation steps - fully decentralized
 1. Install https://metamask.io/
 2. Login to Ropsten Test Net
-3. Navigate to https://gateway.ipfs.io/ipfs/QmZk21YxuEYVhK9JHJ65BmYUnsuN83F1nRAaXWx9L8ZTWJ
+3. Navigate to (take the latest version)
+3.1 https://gateway.ipfs.io/ipfs/QmZk21YxuEYVhK9JHJ65BmYUnsuN83F1nRAaXWx9L8ZTWJ
+3.2 https://gateway.ipfs.io/ipfs/QmejwKRxzGcVwByppT4aQnnL9cc62wcTgNiiQJzwdEW75S
 
 ## Installation steps - manual(local pc)
 1. Install https://metamask.io/
@@ -43,6 +45,17 @@ In stage 2 we are adding more feature to the platform
 
 1. Ability for anyone to sponsor a campaign of idea challanges for a specific Region/City
 2. The campaign sponsorship is targeted for local authorities or companies which want to change something in a Region/City and want to speed things up - This will also serve as advertising for whoever does it(Companies could completely benefit from these kinds of activies by involving the local communities into building something awesome) - it can even be tied together with local NGOs and want to start a local information process to the public
+
+## Technology stack (in progress)
+- IPFS
+- IPNS
+- orbit db
+- Ethereum blockchain
+- Truffle
+- Open Zepellin
+- ganache-cli or ganache-desktop
+- angular-cli
+
 
 ## Media
 All updates will most likely be communicated via twitter @alx_oancea
