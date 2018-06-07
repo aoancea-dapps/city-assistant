@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
 
     public profile: Profile = new Profile();
 
-    public balance: string;
+    public balance: number;
 
     constructor(
         private hashStoreContract: HashStoreContract,
