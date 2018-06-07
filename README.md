@@ -55,6 +55,7 @@ In stage 2 we are adding more feature to the platform
 - Open Zepellin
 - ganache-cli or ganache-desktop
 - angular-cli
+- uPort
 
 
 ## Media
