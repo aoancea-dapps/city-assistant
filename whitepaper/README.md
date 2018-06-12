@@ -67,7 +67,35 @@ People from the local community are able to create posts with projects that solv
 
 We will refer to such post as `community project proposal`
 
+On each `community project proposal` the community can vote in a specific timeframe defined by the one posting it.
+
+A project will have the following information:
+1. Appearance date - the date the project appears on the website
+2. Voting start date - the date the voting starts
+3. Voting end date - the date the voting ends
+4. Title - project title
+5. Description - project content description
+
+The local community voting on such projects is signaling to the local authorities for it's need, thus increasing the odds of success.
+
 #### Local authority driven content
+
+Like the local community, the local authority can also create posts with projects they would like to implement. We will refer to these as `community project proposal`, just because there is no different who posts it as long as the target is the community!
+
+Apart from just being able to submit single projects, a local authority can drive campaigns which tag multiple projects under the same umbrella.
+
+A campaign will have the following information:
+1. Appearance date - the date the campaign appears on the website
+2. Voting start date - the date the voting starts
+3. Voting end date - the date the voting ends
+4. Title - campaign title
+5. Description - campaign content description
+
+The campaign information is applied to all projects in the campaign. Projects from a campaign are only visible within the campaign only.
+
+Local authorities will use campaigns when they want to create awareness and gather feedback on a set of projects they want to implement in the forseeable future. 
+
+The local community can vote on individual projects from a campaign and also on the campaign itself.
 
 #### Voting & delegation
 
