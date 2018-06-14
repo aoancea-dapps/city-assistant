@@ -101,33 +101,52 @@ The local community can vote on individual projects from a campaign and on the c
 
 As mentioned above, voting can be done on specific projects or on the whole campaign. Each user can vote only once.
 
-The number of votes will influence the rewards. Each time a new vote is casted the reward is being calculated based on the following formula `(votes * 0.1) + (votes / 100)`. This means that while you get more votes your reward get's bigger, faster than linear.
+The number of votes will influence the rewards. This component is called the `reward indexer`. Each time a new vote is casted the `reward indexer` is being calculated based on the following formula:
 
-Let's take an example
+```
+reward indexer(ri) = (votes * 0.1) + (votes / 100)
+```
 
-100 votes = 10 + 1 = 11  
-500 votes = 50 + 5 = 55 (instead of getting only 1 point as in the case of `100 votes` you now get `5`)
+This means that while you get more votes your reward get's even bigger, faster than linear.
 
-The resulting value is in fact a `reward indexer` used in calculating the following rewarding tokes:
+
+The resulting `reward indexer` is then used in calculating the following rewarding tokes:
+- City Assistant Reputation - CAR - used in the calculation of CATs, delegation and growing your rank on the platform, rank which illustrates your credibility
 - City Assistant Token - CAT - used for posting new projects and campaigns, can also be traded on exchanges
-- City Assistant Reputation - CAR - used in the calculation of CATs, delegation and having a higher rank on the platform which will give you more credibility
 
 Formulas for calculating the resulting tokens are:
-- CAT - `ri * 0.1`
-- CAR - `ri * 1`
-
-So let's take an example of how much reward you will get
 
 ```
-100 votes = 11 ri = 11 * 0.1 = 1.1 CATs  
-500 votes = 55 ri = 55 * 0.1 = 5.5 CATs
-
-100 votes = 11 ri = 11 * 1 = 11 CARs  
-500 votes = 55 ri = 55 * 1 = 55 CARs
+- CARs = ri * 1
+- CATs = (ri * 0.1) + ((CARs / 1000) * ri)
 ```
 
+Growing your reputation grows the ammount of tokens you receive
 
 #### Use cases
+
+Let's take an example of how the `reward indexer` is being calculated:
+```
+ 100 votes =  10 +  1 =  11 ri
+ 500 votes =  50 +  5 =  55 ri (instead of getting only 1 point as in the case of `100 votes` you now get `5`)
+1000 votes = 100 + 10 = 110 ri
+```
+
+So let's take an example of how the tokens are being calculated:
+```
+ 100 votes =  11 ri =>  11 * 1 =  11 CARs  
+ 500 votes =  55 ri =>  55 * 1 =  55 CARs
+1000 votes = 110 ri => 110 * 1 = 110 CARs
+
+ 100 votes =  11 ri =>  11 * 0.1 + ( 11 / 1000) *  11 =  1.221 CATs  
+ 500 votes =  55 ri =>  55 * 0.1 + ( 55 / 1000) *  55 =  8.525 CATs
+1000 votes = 110 ri => 110 * 0.1 + (110 / 1000) * 110 = 23.100 CATs
+```
+
+As we can see, the more reputation you have, the more CATs you get, this is because you are more trustworthy
+
+
+_Note: These formulas are due to change durring implementation if we see there is an imbalance in the force._
 
 #### Token model
 
