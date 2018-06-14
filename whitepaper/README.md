@@ -167,13 +167,31 @@ Let's take a look of some use cases where delegation might be used:
 - A new project is proposed and you don't know much about the subject but you want to vote with an informed decision while you don't have the time to check it out. You trust the delegate to vote accordingly
 - New projects are posted every day and you don't have the time to check them out but you still want a vote to be casted
 - You are the main driving force in your community. This earns you more revenue as you became a trusted user in the community by investing more time into the platform. You are the user in which other users trust
-- You are the secondary driving force in your community. This earns you less revenue but you still contribute fully to the community. Investing your reputation points earns you a portion of the revenue
+- You are the secondary driving force in your community. This earns you less revenue but you still contribute fully. Investing your reputation points earns you a portion of the revenue
 
 
 #### Token model
 
-- rewarded from votes
-- consumed in posting projects and campaigns
+The tokens on the platform will serve as a means of payment but also a means to grow your reputation.
+
+Tokens:
+- are rewarded from votes
+- are consumed in posting projects and campaigns
+- can be traded on exchange plartforms
+
+We envision the token sale to be:
+- 100.000.000 total tokens
+- 10% owned by the City Assistant Team
+- 85% owned by the community
+- 5% given to bounties
+- Token exchange rate 1 CAT = $0.10
+
+Bonus: For each 5000 CATs you get a bonus of 50%
+```
+ 5000 CATs =  5000 CATs + 50% *  5000 CATs =  5000 CATs + 2500 CATs =  7500 CATs
+12000 CATs = 12000 CATs + 50% * 10000 CATs = 12000 CATs + 5000 CATs = 17000 CATs
+```
+
 
 ### Chapter 3 - Business model
 #
