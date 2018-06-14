@@ -117,8 +117,8 @@ The resulting `reward indexer` is then used in calculating the following rewardi
 Formulas for calculating the resulting tokens are:
 
 ```
-- CARs = ri * 1
-- CATs = (ri * 0.1) + ((CARs / 1000) * ri)
+CARs = ri * 1
+CATs = (ri * 0.1) + ((CARs / 1000) * ri)
 ```
 
 Growing your reputation grows the ammount of tokens you receive
