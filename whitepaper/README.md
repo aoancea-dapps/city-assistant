@@ -123,6 +123,18 @@ Formulas for calculating the resulting tokens are:
 
 Growing your reputation grows the ammount of tokens you receive
 
+
+Delegation is an open issue, subject to many changes. The way we envision is:
+- Users can delegate specific users to vote for them on projects and campaigns
+- Delegation would go by the reputation rank
+- Delegation is done by investing delegation points into delegated user(open issue if the reputation should be spent or not)
+- Each vote casted by the delegate will bring you some reward, but can't bring you as much as you have voted yourself(it will probably be something like you get 60% always + (% of how much reputation from your total reputation you invested)* 60% - around 40% should go to the delegate for casting the vote - we might even switch the percentages)
+
+The main purpose of delegation is to pretty much `delegate`.
+
+Formulas will come later on.
+
+
 #### Use cases
 
 Let's take an example of how the `reward indexer` is being calculated:
@@ -143,10 +155,20 @@ So let's take an example of how the tokens are being calculated:
 1000 votes = 110 ri => 110 * 0.1 + (110 / 1000) * 110 = 23.100 CATs
 ```
 
-As we can see, the more reputation you have, the more CATs you get, this is because you are more trustworthy
+As we can see, the more reputation you have, the more CATs you get, this is because you are more trustworthy.
+
+**TODO - Add use cases for how we calculate on up and down votes** - there is still a debate if we want to have a specific button to down vote backed by a comment which affects the entire project post only if it gets a high number of votes - meaning that down voting needs to be backed by an explanation and solution and the community needs to agree on it - this is to prevent trolling on the platform
 
 
 _Note: These formulas are due to change durring implementation if we see there is an imbalance in the force._
+
+
+Let's take a look of some use cases where delegation might be used:
+- A new project is proposed and you don't know much about the subject but you want to vote with an informed decision while you don't have the time to check it out. You trust the delegate to vote accordingly
+- New projects are posted every day and you don't have the time to check them out but you still want a vote to be casted
+- You are the main driving force in your community. This earns you more revenue as you became a trusted user in the community by investing more time into the platform. You are the user in which other users trust
+- You are the secondary driving force in your community. This earns you less revenue but you still contribute fully to the community. Investing your reputation points earns you a portion of the revenue
+
 
 #### Token model
 
