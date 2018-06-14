@@ -18,6 +18,7 @@
 4. Chapter 4 - Technical solution description
 5. Chapter 5 - Stages of development
 6. Chapter 6 - Team
+7. Chapter 7 - Communication channels
 7. Sources
 
 
@@ -256,6 +257,14 @@ _Note: The above information is subject to change as we advance in development a
 
 ### Chapter 6 - Team
 #
+
+Alex Oancea - CEO, Founder - Masters degree in Computer Science at University of Oradea, Romania. With more than 6 years of development experience from freelancing on small projects to working on leading market enterprice projects. Alex recently started learning and ins and outs of blockchain technology and believes in giving power to the people: `Everyone has something to say, so let's hear them out!`. You can check out his [GitHub](https://github.com/aoancea) and [Twitter](https://twitter.com/alx_oancea) accounts for more information
+
+
+### Chapter 7 - Communication channels
+#
+
+We will keep it short for now so just check out my [Twitter](https://twitter.com/alx_oancea)
 
 ### Sources
 #
