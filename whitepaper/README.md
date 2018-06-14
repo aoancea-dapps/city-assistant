@@ -196,18 +196,60 @@ Bonus: For each 5000 CATs you get a bonus of 50%
 ### Chapter 3 - Business model
 #
 
+#### Market size
+
+The population size is currently between 7-8 billion. These all people need to be heard. They will either vote to flying to Mars or create an awarness around Global Warming.
+![population by 2100](https://news.un.org/en/sites/news.un.org.en/files/legacy-news-images/photos/large/2017/June/Population-Graphic.jpg)
+
+
+Big cities population size:
+- Paris ~2.2M
+- London ~8.1M
+- New York ~8.5M
+
+#### Revenue Model
+City Assistant will:
+- retain a 0.01% fee on every received revenue, mainly from votes
+- charge a fee when posting a project(under discussion)
+- charge a fee when posting a campaign(under discussion - will have a bonus as a campaign contains multiple projects)
+
+
+
 ### Chapter 4 - Technical solution description
 #
+
+We want to integrate as many as possible of usefull tools. From these we have:
+- IPFS - used in saving all the information in a decentralized way
+- IPNS - used in giving a more readable url
+- Orbit Db - used a wrapper over IPFS and speed up development
+- Ethereum blockchain - where the magic happens in terms of calculating the revenue. This might change into `Cosmos Hub` or `Steem blockchain` depending on technical difficulties that we will face
+- Truffle - speed up development
+- Open Zepellin - speed up development + coding standards
+- ganacli-cli or ganache-desktop - development testing purposes
+- angular-cli - front-end framework
+- uPort - we want to integrate uPort to create a seemless user experience by abstracting away your wallet and approving the transactions like on MetaMask
+- MetaMask - will be used in the start to facilitate speed in development
+- Ropsten/Rinkeby test net - used for testing during development. also used for pre-alph, alpha and beta versions
+
+
+
+#### Known technical issues
+- how will upgrade on smart contracts happen when we need to do breaking changes in some areas of the code
+- can we spend only CATs and CARs tokens when performing a transaction or do we also need ETH to spend on `gwei`(a use case would be when posting a vote or a project - it might get really expensive)
+- having to pay for every vote might be an issue - having a running job by the end of every day calculating the revenue would sufice. the system should also pay for all of these from the fees it collects such that the money spent by the community is used in paying for infrastructure costs
+- currently everything is public in terms of information stored in IPFS, we hope this won't need to change
+
+**Note** - these need to be clarified first before going forward!
 
 ### Chapter 5 - Stages of development
 #
 
 The development life cycle of `City Assistant` requires several stages of developemnt: 
-1. Q2 2018 - Concept + R&D
-2. Q3 2018 - UI Platform development
-3. Q4 2018 - Pre-Alpha Version Release on Test Net
-4. Q1 2019 - Alpha & Beta Release on Test Net
-5. Q2 2019 - Alpha Release on Main Net
+1. Q3 2018 - Concept + R&D
+2. Q4 2018 - UI Platform development
+3. Q1 2019 - Pre-Alpha Version Release on Test Net
+4. Q2 2019 - Alpha & Beta Release on Test Net
+5. Q3 2019 - Alpha Release on Main Net
 6. 2020 Onwards - Enhancements and voting on Country, Continental, Global issues enters development
 
 _Note: The above information is subject to change as we advance in development and new things are discovered. A diagram for a more visual perspective will be provided soon._
