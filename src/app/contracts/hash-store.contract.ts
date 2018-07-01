@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Web3ProviderService } from '../services/web3-provider.service';
+import { Web3ProviderService } from '../core/services/web3-provider.service';
 
 import { environment } from '../../environments/environment';
 

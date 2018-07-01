@@ -2,8 +2,8 @@ import { Component, OnInit, NgZone } from '@angular/core';
 
 import { Router } from '@angular/router';
 
-import { Web3ProviderService } from '../services/web3-provider.service';
-import { IpfsService } from '../services/ipfs.service';
+import { Web3ProviderService } from '../core/services/web3-provider.service';
+import { IpfsService } from '../core/services/ipfs.service';
 
 import { HashStoreContract } from '../contracts/hash-store.contract';
 

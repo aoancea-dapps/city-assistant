@@ -1,6 +1,6 @@
 import { Component, OnInit, Self } from '@angular/core';
 
-import { IpfsService } from '../services/ipfs.service';
+import { IpfsService } from '../core/services/ipfs.service';
 
 import { Post, HashStore } from './post.model';
 import { promise } from 'protractor';
