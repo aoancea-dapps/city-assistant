@@ -8,6 +8,7 @@ import { promise } from 'protractor';
 
 import { HashStoreContract } from '../contracts/hash-store.contract';
 import { Profile } from '../profile/profile.model';
+import { PostService } from '../services/post.service';
 
 @Component({
     selector: 'app-home',
@@ -20,7 +21,9 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private hashStoreContract: HashStoreContract,
-        private ipfsService: IpfsService) { }
+        private ipfsService: IpfsService,
+        private postService: PostService
+    ) { }
 
     async ngOnInit() {
         var hashId: number = await this.load_hash_id();
@@ -180,16 +183,12 @@ export class HomeComponent implements OnInit {
     post_vote_up(post: Post): void {
         post.votes = post.votes + 1;
 
-        this.hashStoreContract.instance.post_vote(post.id, 1, function (err, result) {
-            // fire and forget => this should work
-        });
+        this.postService.up_vote(post.id);
     }
 
     post_vote_down(post: Post): void {
         post.votes = post.votes - 1;
 
-        this.hashStoreContract.instance.post_vote(post.id, -1, function (err, result) {
-            // fire and forget => this should work
-        });
+        this.postService.down_vote(post.id);
     }
 }
