@@ -54,7 +54,7 @@ In stage 2 we are adding more feature to the platform
 - orbit db
 - Ethereum blockchain
 - Truffle
-- Open Zepellin
+- Open Zeppellin
 - ganache-cli or ganache-desktop
 - angular-cli
 - uPort
